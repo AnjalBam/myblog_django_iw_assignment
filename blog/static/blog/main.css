@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.base-wrapper {
+    padding-top: 56px;
+}
+
+.navlink-hov:hover {
+    color: #a2a6a8;
+}
+
+.detail {
+    font-size: 12px;
+}
