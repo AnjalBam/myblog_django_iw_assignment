@@ -1,0 +1,39 @@
+{% extends 'blog/blog_base.html' %}
+
+{% block content %}
+  <div class="container-fluid p-0 m-0">
+    <div class="jumbotron bg-primary rounded-0">
+      <div class="text-white container">
+        <h2 class=" font-weight-light">Welcome to <span
+            class="font-weight-bold">my</span>Blog | <strong>Blogs</strong></h2>
+        <p class="font-weight-light">Read and Grow... That all it takes!</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8 col-sm-12 p-2">
+          <div class="title">
+            <h2 class="font-weight-regular">{{ blog.title }}</h2>
+            <h6 class="text-muted font-weight-light">
+              <a href="{% url 'blog:authors_list' %}" class="text-muted
+              ">{{ blog.author }}</a> | Published at: {{ blog.published_at }} |
+              Modified: {{ blog.last_modified }}
+            </h6>
+          </div>
+          <div class="description">
+            <p class="pl-0 pt-3 pr-3 pb-3 mt-3">
+                {{ blog.content }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 p-2">
+          {% include 'blog/utils/sidebar.html' %}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}

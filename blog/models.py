@@ -19,5 +19,8 @@ class BlogPost(models.Model):
     published_at = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        ordering = ('-published_at',)
+
     def __str__(self):
         return f"{self.title[:20]}... - {self.author}"

@@ -21,11 +21,15 @@
                 <h6 class="card-subtitle text-muted p-2 detail">
                   {{ post.author }} |
                   Published: {{ post.published_at }} |
-                  Modified: {{ post.modified_at }}</h6>
+                  Modified: {{ post.last_modified }}</h6>
                 <p class="card-text">
                   {{ post.content | slice:':200' }}...
                 </p>
-                <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                <a
+                    href="{% url 'blog:blog' post.slug %}"
+                    class="btn btn-primary">
+                  Read More
+                </a>
               </div>
             </div>
           {% endfor %}
