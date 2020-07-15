@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Ubuntu:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'pages/css/styles.css' %}" />
+  </head>
+  <body>
+    <header id="header">
+
+
+      <div class="header-wrapper">
+        <div class="header-content">
+          <h1 class="title">I am <span>AnjalBam</span></h1>
+          <p class="description">A Tech Enthusiast and a programmer.</p>
+          <div class="button-grp">
+            <a href="{% url 'blog:home' %}" class="btn btn-login">myBlog</a>
+            <a href="https://github.com/AnjalBam" target="_blank" class="btn
+            btn-signup">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+
+
+    <!-- The javascript section below-->
+    <script>
+      // This is the code for bg animation
+      const headerEl = document.getElementById("header");
+      const getRandomValue = (min, max) => {
+        return Math.floor(Math.random() * (max - min)) + min;
+      };
+
+      const totalDots = 50;
+      for (let i = 0; i < totalDots; i++) {
+        const animatedDiv = document.createElement("div");
+        animatedDiv.className = "animated-div";
+        headerEl.appendChild(animatedDiv);
+      }
+
+      const animatedDivs = document.getElementsByClassName("animated-div");
+      for (i = 0; i < animatedDivs.length; i++) {
+        animatedDivs[i].style.top = getRandomValue(0, 95) + "%";
+        animatedDivs[i].style.left = getRandomValue(0, 95) + "%";
+      }
+      setInterval(() => {
+        let heightY = window.innerHeight;
+        let widthX = window.innerWidth;
+
+        for (i = 0; i < animatedDivs.length; i++) {
+          animatedDivs[i].style.transform =
+            "translate(" +
+            getRandomValue(-widthX / 2, widthX / 2) +
+            "px," +
+            getRandomValue(-heightY / 2, heightY / 2) +
+            "px)";
+        }
+      }, 1500);
+      // Bg animation ends here...
+    </script>
+  </body>
+</html>
