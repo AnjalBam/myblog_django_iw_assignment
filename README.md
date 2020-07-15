@@ -5,7 +5,7 @@ Hello, This is the assignment for the Django sessions from the IW academy
  to run this project you must follow the following steps
  <ul>
     <li>Clone or download this repository</li>
-    <li>Create your Virtual Environment</li>
+    <li>Create your Virtual Environment and activate it.</li>
     <li>Install dependencies using command <code>pip install -r requirements.txt
     </code>in the root directory of the project.</li>
     <li>Run command <code>./manage.py runserver</code> in the same directory
