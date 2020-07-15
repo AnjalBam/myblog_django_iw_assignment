@@ -8,5 +8,5 @@ from .models import Author, BlogPost
 def home_view(request):
     posts = get_list_or_404(BlogPost)
     print(posts)
-    context = {}
+    context = {'posts': posts}
     return render(request, 'blog/index.html', context=context)
