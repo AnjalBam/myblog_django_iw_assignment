@@ -10,3 +10,8 @@ def home_view(request):
     print(posts)
     context = {'posts': posts}
     return render(request, 'blog/index.html', context=context)
+
+
+def author_list_view(request):
+    context = {}
+    return render(request, 'blog/author-list.html', context=context)

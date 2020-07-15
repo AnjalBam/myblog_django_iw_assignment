@@ -1,0 +1,77 @@
+{% extends 'blog/blog_base.html' %}
+
+{% block content %}
+  <div class="container-fluid p-0">
+    <div class="jumbotron bg-primary rounded-0">
+      <div class="text-white container">
+
+        <h2 class=" font-weight-light">Welcome to <span
+            class="font-weight-bold">my</span>Blog | <strong>Author's</strong> section</h2>
+        <p class="font-weight-light">Here the team of one of the finest
+          Authors!</p>
+      </div>
+    </div>
+    <div class="container">
+
+      <div class="authors-wrapper row">
+        <div class="author-container  col-md-8 col-sm-12 p-3">
+
+          <div class="card shadow-sm mt-1">
+            <div class="card-body">
+              <h5 class="card-title font-weight-regular">Author1</h5>
+              <h6 class="card-subtitle font-weight-light p-2
+              author-email">author@author
+                .com</h6>
+              <p class="card-text">Hello this is my bio</p>
+              <div class="btn-group" role="group">
+                <a href="#" class="btn btn-primary btn-sm">Posts</a>
+                <a href="#" class="btn btn-danger btn-sm" target="_blank"
+                   title="In a New Tab"
+                >GitHub Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title font-weight-regular">Author1</h5>
+              <h6 class="card-subtitle font-weight-light p-2
+              author-email">author@author
+                .com</h6>
+              <p class="card-text">Hello this is my bio</p>
+              <div class="btn-group" role="group">
+                <a href="#" class="btn btn-primary btn-sm">Posts</a>
+                <a href="#" class="btn btn-danger btn-sm" target="_blank"
+                   title="In a New Tab"
+                >GitHub Profile</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title font-weight-regular">Author1</h5>
+              <h6 class="card-subtitle font-weight-light p-2
+              author-email">author@author
+                .com</h6>
+              <p class="card-text">Hello this is my bio</p>
+              <div class="btn-group" role="group">
+                <a href="#" class="btn btn-primary btn-sm">Posts</a>
+                <a href="#" class="btn btn-danger btn-sm" target="_blank"
+                   title="In a New Tab"
+                >GitHub Profile</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-12 p-3">
+          {% include 'blog/utils/sidebar.html' %}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+{% endblock content %}
