@@ -1,6 +1,8 @@
-from django.shortcuts import render, get_list_or_404, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import( render, get_list_or_404,
+                              get_object_or_404, reverse)
+from django.http import HttpResponsePermanentRedirect
 from .models import Author, BlogPost
+from .forms import CreateBlogForm
 
 # Create your views here.
 
@@ -27,3 +29,26 @@ def blog_view(request, blog_slug):
         'blog': blog
     }
     return render(request, 'blog/blog.html', context=context)
+
+
+def create_slug(string):
+    s = string.lower()
+    words = s.split(' ')
+    slug = '-'.join(words)
+    return slug
+
+
+def create_blog(request):
+    if request.method == 'POST':
+        form = CreateBlogForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.slug = create_slug(form.title)
+            form.save()
+            return HttpResponsePermanentRedirect(reverse('blog:home'))
+    else:
+        form = CreateBlogForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'blog/create-blog.html', context=context)

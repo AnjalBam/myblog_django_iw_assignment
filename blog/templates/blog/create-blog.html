@@ -1,0 +1,37 @@
+{% extends 'blog/blog_base.html' %}
+
+{% block content %}
+  <div class="container-fluid p-0">
+
+    <div class="jumbotron bg-primary rounded-0">
+      <div class="text-white container">
+
+        <h2 class=" font-weight-light">Create an <span
+            class="font-weight-bold">Awesome </span>Blog</h2>
+        <p class="font-weight-light">Have A great idea? or, Want to share
+          anything? <br>Why not <strong>write</strong> it...</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-7 col-sm-12 p-3">
+          <h2 class="mb-4">Create a Blog:</h2>
+          <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary
+            rounded-pill px-5 btn-lg">Post</button>
+          </form>
+        </div>
+
+        <div class="col-md-4 offset-md-1 col-sm-12 mt-3">
+          {% include 'blog/utils/sidebar.html' %}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+{% endblock content %}
