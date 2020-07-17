@@ -1,7 +1,10 @@
 from .base import *
 
 
+<<<<<<< HEAD
 # SECURITY WARNING: keep the secret key used in production secret!
+=======
+>>>>>>> bug_fix/settings_file_manage
 SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
