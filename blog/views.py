@@ -1,4 +1,4 @@
-from django.shortcuts import( render, get_list_or_404,
+from django.shortcuts import(render, get_list_or_404,
                               get_object_or_404, reverse)
 from django.http import HttpResponsePermanentRedirect
 from .models import Author, BlogPost
@@ -8,7 +8,8 @@ from .forms import CreateBlogForm
 
 
 def home_view(request):
-    posts = get_list_or_404(BlogPost)
+    # posts = get_list_or_404(BlogPost)
+    posts = BlogPost.objects.all()
 
     # print(posts)
     context = {'posts': posts}
@@ -16,9 +17,11 @@ def home_view(request):
 
 
 def author_list_view(request):
-    authors = get_list_or_404(Author)
+    # authors = get_list_or_404(Author)
+    authors = Author.objects.all()
+
     # print(authors)
-    context = { 'authors': authors }
+    context = {'authors': authors }
     return render(request, 'blog/author-list.html', context=context)
 
 
